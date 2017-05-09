@@ -5,6 +5,10 @@
 # A minimal current TL is installed adding only the packages that are
 # required
 
+# original version obtained from
+#   https://github.com/latex3/latex3/support/texlive.sh
+# and adjusted for texjporg by Hironobu Yamashita (2017/05/09)
+
 # See if there is a cached version of TL available
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v texlua > /dev/null; then
@@ -14,7 +18,7 @@ if ! command -v texlua > /dev/null; then
   cd install-tl-20*
 
   # Install a minimal system
-  ./install-tl --profile=../support/texlive.profile
+  ./install-tl --profile=./texlive.profile
 
   cd ..
 fi
@@ -89,6 +93,10 @@ tlmgr install   \
   xunicode      \
   zhmetrics     \
   zhnumber
+
+# More packages to be installed, for pLaTeX/upLaTeX
+tlmgr install --no-depends jsclasses japanese-otf japanese-otf-uptex \
+  platex-tools
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
