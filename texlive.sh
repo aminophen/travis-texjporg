@@ -96,7 +96,7 @@ tlmgr install   \
 
 # More packages to be installed, for pLaTeX/upLaTeX
 tlmgr install --no-depends jsclasses japanese-otf japanese-otf-uptex \
-  platex-tools
+  ptex-fontmaps platex-tools
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
