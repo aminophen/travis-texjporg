@@ -99,7 +99,7 @@ tlmgr install dvipdfmx dvips makeindex
 
 # More packages to be installed, for pLaTeX/upLaTeX
 tlmgr install jsclasses japanese-otf japanese-otf-uptex \
-  ptex-fontmaps platex-tools
+  ptex-fontmaps platex-tools pbibtex-base
 
 # frequently used in texjporg repos
 tlmgr install geometry \
