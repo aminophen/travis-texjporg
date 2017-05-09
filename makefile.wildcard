@@ -1,0 +1,16 @@
+TESTINPUTS := $(wildcard *.tex)
+TESTOUTPUTS := $(patsubst %.tex,%.pdf,$(TESTINPUTS))
+KANJI = -kanji=utf8
+FONTMAP = -f ipaex.map -f ptex-ipaex.map
+
+.PHONY: test cleanup
+test: $(TESTOUTPUTS)
+
+%.pdf:
+	platex $(KANJI) $*.tex
+	platex $(KANJI) $*.tex
+	platex $(KANJI) $*.tex
+	dvipdfmx $(FONTMAP) $*.dvi
+
+cleanup:
+	rm -f *.dvi *.log *.aux *.toc *.out *.pdf

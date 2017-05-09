@@ -7,11 +7,20 @@ cache:
     - $HOME/.texlive
 
 script:
-  - wget https://raw.githubusercontent.com/texjporg/ptex-manual/master/ptex-manual.tex
+# texjporg/ptex-manual
+  - git clone https://github.com/texjporg/ptex-manual
+  - cd ptex-manual
   - platex -kanji=utf8 ptex-manual.tex
   - makeindex -s gind.ist -o ptex-manual.ind ptex-manual.idx
   - platex ptex-manual.tex
   - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual
+  - cd ..
+# texjporg/platex/tests
+  - git clone https://github.com/texjporg/platex
+  - cd platex/tests
+  - cp ../../makefile.wildcard Makefile
+  - make test
+  - cd ../..
 # - texlua build.lua check -q -H
 
 #notifications:
