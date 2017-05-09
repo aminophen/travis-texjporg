@@ -94,9 +94,18 @@ tlmgr install   \
   zhmetrics     \
   zhnumber
 
+# More binaries to be installed
+tlmgr install dvipdfmx dvips makeindex
+
 # More packages to be installed, for pLaTeX/upLaTeX
-tlmgr install --no-depends jsclasses japanese-otf japanese-otf-uptex \
+tlmgr install jsclasses japanese-otf japanese-otf-uptex \
   ptex-fontmaps platex-tools
+
+# frequently used in texjporg repos
+tlmgr install geometry \
+  tex-gyre palatino times \
+  newtx newpx txfonts pxfonts boondox fontaxes newtxtt \
+  xypic booktabs enumitem hyperref url pxjahyper
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
