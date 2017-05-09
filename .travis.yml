@@ -15,6 +15,13 @@ script:
   - platex ptex-manual.tex
   - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual.dvi
   - cd ..
+# texjporg/mendex-doc
+  - git clone https://github.com/texjporg/mendex-doc
+  - cd mendex-doc
+  - platex -kanji=utf8 mendex.tex
+  - platex -kanji=utf8 mendex.tex
+  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map mendex.dvi
+  - cd ..
 # texjporg/ptex-base/tests
   - git clone https://github.com/texjporg/ptex-base
   - cd ptex-base/tests
