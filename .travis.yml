@@ -13,7 +13,15 @@ script:
   - platex -kanji=utf8 ptex-manual.tex
   - makeindex -s gind.ist -o ptex-manual.ind ptex-manual.idx
   - platex ptex-manual.tex
-  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual
+  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual.dvi
+  - cd ..
+# texjporg/ptex-base/tests
+  - git clone https://github.com/texjporg/ptex-base
+  - cd ptex-base/tests
+  - ptex -kanji=utf8 sample.tex
+  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map sample.dvi
+  - eptex -kanji=utf8 sample.tex
+  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map sample.dvi
   - cd ..
 # texjporg/platex/tests
   - git clone https://github.com/texjporg/platex
