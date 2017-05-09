@@ -12,5 +12,15 @@ test: $(TESTOUTPUTS)
 	platex $(KANJI) $*.tex
 	dvipdfmx $(FONTMAP) $*.dvi
 
+# specific for texjporg/platex/tests (no dvi output, exit status 1)
+newline_par.pdf:
+	platex $(KANJI) newline_par.tex || echo
+	platex $(KANJI) newline_par.tex || echo
+	platex $(KANJI) newline_par.tex || echo
+	touch $@
+# current does not support
+plext_pbox.pdf:
+	touch $@
+
 cleanup:
 	rm -f *.dvi *.log *.aux *.toc *.out *.pdf

@@ -21,6 +21,7 @@ script:
   - cp ../../makefile.wildcard Makefile
   - make test
   - cd ../..
+# original from latex3
 # - texlua build.lua check -q -H
 
 #notifications:

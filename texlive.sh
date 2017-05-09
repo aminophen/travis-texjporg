@@ -105,7 +105,8 @@ tlmgr install jsclasses japanese-otf japanese-otf-uptex \
 tlmgr install geometry \
   tex-gyre palatino times \
   newtx newpx txfonts pxfonts boondox fontaxes newtxtt \
-  xypic booktabs enumitem hyperref url pxjahyper
+  xypic booktabs enumitem hyperref url pxjahyper \
+  lipsum mathtools mdwtools ucs
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
