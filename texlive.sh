@@ -106,6 +106,7 @@ tlmgr install geometry \
   tex-gyre palatino times \
   newtx newpx txfonts pxfonts boondox fontaxes newtxtt \
   xypic booktabs enumitem hyperref url pxjahyper \
+  newverbs \
   lipsum mathtools mdwtools ucs
 
 # Keep no backups (not required, simply makes cache bigger)
