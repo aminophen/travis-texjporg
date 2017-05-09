@@ -1,0 +1,19 @@
+install:
+ - source ./texlive.sh
+
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+
+#script:
+# - texlua build.lua check -q -H
+
+#notifications:
+#  email:
+#    recipients:
+#      - issue@texjp.org
+#    on_success: change
+#    on_failure: always
+#    on_start:   never
+
