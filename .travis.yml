@@ -7,6 +7,11 @@ cache:
     - $HOME/.texlive
 
 script:
+  - wget https://raw.githubusercontent.com/texjporg/ptex-manual/master/ptex-manual.tex
+  - platex -kanji=utf8 ptex-manual.tex
+  - makeindex -s gind.ist -o ptex-manual.ind ptex-manual.idx
+  - platex ptex-manual.tex
+  - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual
 # - texlua build.lua check -q -H
 
 #notifications:
