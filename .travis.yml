@@ -29,11 +29,16 @@ script:
   - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map sample.dvi
   - eptex -kanji=utf8 sample.tex
   - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map sample.dvi
-  - cd ..
+  - cd ../..
 # texjporg/platex/tests
   - git clone https://github.com/texjporg/platex
   - cd platex/tests
   - cp ../../makefile.wildcard Makefile
+  - make test
+  - cd ../..
+# texjporg/pbibtex-base/tests
+  - git clone https://github.com/texjporg/pbibtex-base
+  - cd pbibtex-base/tests
   - make test
   - cd ../..
 # original from latex3
