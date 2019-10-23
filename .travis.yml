@@ -11,8 +11,9 @@ script:
   - git clone https://github.com/texjporg/ptex-manual
   - cd ptex-manual
   - platex -kanji=utf8 ptex-manual.tex
-  - makeindex -s gind.ist -o ptex-manual.ind ptex-manual.idx
-  - platex ptex-manual.tex
+  - platex -kanji=utf8 ptex-manual.tex
+  - mendex -U -s gind.ist -o ptex-manual.ind ptex-manual.idx
+  - platex -kanji=utf8 ptex-manual.tex
   - dvipdfmx -f ptex-ipaex.map -f uptex-ipaex.map -f otf-ipaex.map ptex-manual.dvi
   - cd ..
 # texjporg/mendex-doc
