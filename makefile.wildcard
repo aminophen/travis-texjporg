@@ -18,6 +18,11 @@ newline_par.pdf:
 	platex $(KANJI) newline_par.tex || echo
 	platex $(KANJI) newline_par.tex || echo
 	touch $@
+platexrelease_pair.pdf:
+	platex $(KANJI) platexrelease_pair || echo
+	platex $(KANJI) platexrelease_pair || echo
+	platex $(KANJI) platexrelease_pair || echo
+	touch $@
 # current does not support
 plext_pbox.pdf:
 	touch $@
